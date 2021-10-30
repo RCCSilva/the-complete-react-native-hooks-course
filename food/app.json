@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "giorgio-app",
     "name": "food",
     "slug": "food",
     "version": "1.0.0",
@@ -23,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.rccsilva.food"
     },
     "web": {
       "favicon": "./assets/favicon.png"
