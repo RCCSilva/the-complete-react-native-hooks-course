@@ -1,0 +1,11 @@
+{
+  "license": "ISC",
+  "scripts": {
+    "db": "json-server -w db.json",
+    "tunnel": "ngrok http 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "ngrok": "^4.2.2"
+  }
+}

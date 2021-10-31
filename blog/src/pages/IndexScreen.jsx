@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Context as BlogContext } from '../context/BlogContext'
 import { Feather } from '@expo/vector-icons'
@@ -6,13 +6,17 @@ import { useNavigation } from '@react-navigation/core'
 
 const IndexScreen = () => {
   const navigation = useNavigation()
-  const { state, deleteBlogPost } = useContext(BlogContext)
+  const { state, getBlogPosts, deleteBlogPost } = useContext(BlogContext)
+
+  useEffect(() => {
+    getBlogPosts()
+  }, [])
 
   return (
     <View>
       <FlatList
         data={state}
-        keyExtractor={(item) => item.title}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity onPress={() => navigation.navigate('Show', { id: item.id })}>
